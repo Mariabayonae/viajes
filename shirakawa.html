@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shirakawa-go</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   AVIÓN
+========================= */
+
+.plane{
+  position:fixed;
+  top:0;
+  left:0;
+  font-size:24px;
+  pointer-events:none;
+  transform:translate(-50%, -50%);
+  z-index:9999;
+}
+
+/* =========================
+   BACK
+========================= */
+
+.back{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:rgba(0,0,0,0.45);
+  color:white;
+  padding:8px 12px;
+  border-radius:10px;
+  text-decoration:none;
+  z-index:10;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  position:relative;
+}
+
+.hero video{
+  width:100%;
+  height:70vh;
+  object-fit:cover;
+  display:block;
+  filter:brightness(0.85);
+}
+
+.hero h1{
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  font-family:'Anton', sans-serif;
+  font-size:3.5rem;
+  color:#fff;
+  text-shadow:0 10px 30px rgba(0,0,0,0.8);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.45), transparent 60%);
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+  max-width:800px;
+  margin:25px auto 10px;
+  padding:18px;
+  background:rgba(255,255,255,0.88);
+  border-radius:14px;
+  text-align:center;
+  color:#333;
+  line-height:1.6;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:20px auto;
+}
+
+.tab{
+  padding:10px 18px;
+  border:none;
+  border-radius:999px;
+  cursor:pointer;
+  background:rgba(255,255,255,0.25);
+  border:1px solid rgba(0,0,0,0.1);
+  backdrop-filter:blur(8px);
+  font-weight:600;
+}
+
+.tab.active{
+  background:#5a3a2b;
+  color:white;
+}
+
+/* =========================
+   CARD INFO
+========================= */
+
+.card{
+  max-width:800px;
+  margin:20px auto;
+  padding:22px;
+  background:rgba(255,255,255,0.55);
+  border:1px solid rgba(90,58,43,0.35);
+  border-radius:18px;
+  backdrop-filter:blur(12px);
+  line-height:1.6;
+}
+
+/* =========================
+   GALERÍA
+========================= */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  max-width:900px;
+  margin:35px auto 70px;
+}
+
+.gallery img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+/* =========================
+   FONDO CAFÉ SOLO PARA ESTE DESTINO
+========================= */
+
+.bg-shirakawa{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(120, 85, 60, 0.25), transparent 55%),
+    radial-gradient(circle at 80% 60%, rgba(160, 120, 90, 0.18), transparent 60%),
+    linear-gradient(180deg, #f3e7db, #ffffff);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ✈️ avión -->
+<div class="plane">✈️</div>
+
+<!-- ☕ fondo café SOLO DESTINO -->
+<div class="bg-shirakawa"></div>
+
+<a class="back" href="index.html">← Volver</a>
+
+<!-- HERO -->
+<div class="hero">
+
+  <video autoplay muted loop playsinline>
+    <source src="video/shirakawa2.mp4">
+  </video>
+
+  <h1>SHIRAKAWA-GO</h1>
+
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+Shirakawa-go es un pueblo tradicional japonés famoso por sus casas de techo de paja diseñadas para resistir fuertes nevadas. Es uno de los paisajes más icónicos del invierno en Japón.
+</div>
+
+<!-- BOTONES -->
+<div class="tabs">
+
+  <button class="tab active" onclick="setInfo('epoca', this)">Mejor época</button>
+  <button class="tab" onclick="setInfo('ropa', this)">Qué llevar</button>
+  <button class="tab" onclick="setInfo('imperdibles', this)">Imperdibles</button>
+  <button class="tab" onclick="setInfo('precios', this)">Precios</button>
+
+</div>
+
+<!-- INFO -->
+<div class="card" id="info">
+Explora Shirakawa-go usando los botones.
+</div>
+
+<!-- GALERÍA -->
+<div class="gallery">
+
+  <img src="fotos/shirakawa2.jpg">
+  <img src="fotos/shirakawamedio.jpg">
+  <img src="fotos/shirakawa3.jpg">
+
+</div>
+
+<script>
+
+document.addEventListener("mousemove",(e)=>{
+  const plane=document.querySelector(".plane");
+  plane.style.left=e.clientX+"px";
+  plane.style.top=e.clientY+"px";
+});
+
+function setInfo(type, btn){
+
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  if(btn) btn.classList.add("active");
+
+  const info=document.getElementById("info");
+
+  if(type==="epoca"){
+    info.innerHTML = `
+    Invierno (diciembre-febrero): el pueblo se cubre completamente de nieve y parece un paisaje de cuento.<br><br>Verano: más verde, tranquilo y con menos turistas.
+    `;
+  }
+
+  if(type==="ropa"){
+    info.innerHTML = `
+    Invierno:<br>
+    - Abrigo grueso<br>
+    - Botas impermeables<br>
+    - Guantes y gorro<br><br>
+
+    Verano:<br>
+    - Ropa ligera<br>
+    - Chaqueta para la noche
+    `;
+  }
+
+  if(type==="imperdibles"){
+    info.innerHTML = `
+    - Mirador Shiroyama<br>
+    - Casas tradicionales gassho-zukuri<br>
+    - Paisajes nevados iluminados<br>
+    - Caminatas por el pueblo
+    `;
+  }
+
+  if(type==="precios"){
+    info.innerHTML = `
+    Transporte: 20–60 USD<br>
+    Alojamiento: 80–200 USD<br>
+    Comida: 10–25 USD<br>
+    Miradores: gratis
+    `;
+  }
+
+}
+
+</script>
+
+</body>
+</html>
