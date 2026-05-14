@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lake Bled</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #eaf6ff, #ffffff);
+  overflow-x:hidden;
+}
+
+/* fondo lago suave */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(0,120,255,0.18), transparent 55%),
+    radial-gradient(circle at 75% 60%, rgba(0,160,200,0.12), transparent 60%);
+  z-index:-2;
+}
+
+/* =========================
+   AVIÓN
+========================= */
+
+.plane{
+  position:fixed;
+  top:0;
+  left:0;
+  font-size:24px;
+  pointer-events:none;
+  transform:translate(-50%, -50%);
+  z-index:9999;
+}
+
+/* =========================
+   BACK
+========================= */
+
+.back{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:rgba(0,0,0,0.45);
+  color:white;
+  padding:8px 12px;
+  border-radius:10px;
+  text-decoration:none;
+  z-index:10;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  position:relative;
+}
+
+.hero video{
+  width:100%;
+  height:70vh;
+  object-fit:cover;
+  display:block;
+  filter:brightness(0.85) saturate(1.1);
+}
+
+.hero h1{
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  font-family:'Anton', sans-serif;
+  font-size:3.5rem;
+  color:#ffffff;
+  text-shadow:0 10px 30px rgba(0,0,0,0.8);
+}
+
+/* overlay */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.45), transparent 60%);
+}
+
+/* =========================
+   INFO GENERAL
+========================= */
+
+.intro{
+  max-width:800px;
+  margin:25px auto 10px;
+  padding:18px 20px;
+  background:rgba(255,255,255,0.88);
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  line-height:1.6;
+  text-align:center;
+  color:#333;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:20px auto;
+  position:relative;
+  z-index:5;
+}
+
+.tab{
+  padding:10px 18px;
+  border:none;
+  border-radius:999px;
+  cursor:pointer;
+  background:rgba(255,255,255,0.25);
+  color:#0b2f55;
+  font-weight:600;
+  border:1px solid rgba(0,0,0,0.08);
+  backdrop-filter:blur(8px);
+  transition:0.25s;
+}
+
+.tab:hover{
+  transform:translateY(-2px);
+  background:#ffffff;
+}
+
+.tab.active{
+  background:#0b6ef3;
+  color:white;
+}
+
+/* =========================
+   INFO CARD
+========================= */
+
+.card{
+  max-width:800px;
+  margin:20px auto 30px;
+  padding:22px;
+
+  background:rgba(255,255,255,0.55);
+  backdrop-filter: blur(12px);
+
+  border:1px solid rgba(0,120,255,0.35);
+  border-radius:18px;
+
+  box-shadow:0 15px 40px rgba(0,0,0,0.10);
+
+  line-height:1.6;
+  color:#1f2d3d;
+}
+
+/* =========================
+   GALERÍA
+========================= */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  max-width:900px;
+  margin:35px auto 70px;
+}
+
+.gallery img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:14px;
+  transition:0.3s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* responsive */
+@media(max-width:768px){
+  .hero h1{font-size:2.5rem;}
+  .gallery{grid-template-columns:1fr;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="plane">✈️</div>
+
+<a class="back" href="index.html">← Volver</a>
+
+<!-- HERO -->
+<div class="hero">
+
+  <video autoplay muted loop playsinline>
+    <source src="video/bled-video.mp4">
+  </video>
+
+  <h1>LAKE BLED</h1>
+
+</div>
+
+<!-- INFO GENERAL -->
+<div class="intro">
+Ubicado en Eslovenia, Lake Bled es un lago alpino rodeado de montañas y naturaleza cristalina. 
+Es famoso por su isla en el centro, su iglesia histórica y su castillo medieval.
+</div>
+
+<!-- BOTONES -->
+<div class="tabs">
+
+  <button class="tab active" onclick="setInfo('epoca', this)">Mejor época</button>
+  <button class="tab" onclick="setInfo('ropa', this)">Qué llevar</button>
+  <button class="tab" onclick="setInfo('imperdibles', this)">Imperdibles</button>
+  <button class="tab" onclick="setInfo('precios', this)">Precios</button>
+
+</div>
+
+<!-- INFO DINÁMICA -->
+<div class="card" id="info">
+Explora Lake Bled usando los botones.
+</div>
+
+<!-- GALERÍA -->
+<div class="gallery">
+
+  <img src="fotos/lago.jpeg">
+  <img src="fotos/bled-castillo.jpeg">
+  <img src="fotos/bled-isla.jpeg">
+
+</div>
+
+<script>
+
+/* AVIÓN */
+document.addEventListener("mousemove",(e)=>{
+  const plane=document.querySelector(".plane");
+  plane.style.left=e.clientX+"px";
+  plane.style.top=e.clientY+"px";
+});
+
+/* INFO MEJORADA */
+function setInfo(type, btn){
+
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  if(btn) btn.classList.add("active");
+
+  const info=document.getElementById("info");
+
+  if(type==="epoca"){
+    info.innerHTML = `
+    Entre mayo y septiembre es la mejor época para visitar Lake Bled.<br><br>
+
+    Clima templado (15°C–28°C), días largos y el lago en su máximo color turquesa.<br><br>
+
+    En primavera y otoño hay menos turistas y la experiencia es más tranquila.
+    `;
+  }
+
+  if(type==="ropa"){
+    info.innerHTML = `
+    Lake Bled está en zona alpina, por lo que el clima cambia rápido.<br><br>
+
+    • Ropa por capas<br>
+    • Chaqueta impermeable o cortavientos<br>
+    • Suéter ligero<br>
+    • Zapatos cómodos o de senderismo<br><br>
+
+    Evita sandalias si vas a caminar alrededor del lago.
+    `;
+  }
+
+  if(type==="imperdibles"){
+    info.innerHTML = `
+    Imperdibles en Lake Bled:<br><br>
+
+    • Isla de Bled con su iglesia<br>
+    • Castillo con vista panorámica<br>
+    • Caminata alrededor del lago (6 km)<br>
+    • Miradores al amanecer y atardecer<br><br>
+
+    El atardecer es el momento más espectacular.
+    `;
+  }
+
+  if(type==="precios"){
+    info.innerHTML = `
+    Precios aproximados:<br><br>
+
+    • Alojamiento: 30–300 USD<br>
+    • Paseo en bote: 15–25 USD<br>
+    • Entrada al castillo: 10–15 USD<br>
+    • Comida: 10–40 USD<br><br>
+
+    En temporada alta los precios suben bastante.
+    `;
+  }
+
+}
+
+</script>
+
+</body>
+</html>
