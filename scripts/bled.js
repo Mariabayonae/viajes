@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.setInfo = function(type, btn){
-
-  const info = document.getElementById("info");
+const info = document.getElementById("info");
   if (!info) return;
 
   document.querySelectorAll(".tab").forEach(t =>
@@ -24,53 +23,47 @@ window.setInfo = function(type, btn){
 
   if(btn) btn.classList.add("active");
 
-  if(type === "epoca"){
+  if(type === "curiosidades"){
     info.innerHTML = `
-    Entre mayo y septiembre es la mejor época para visitar Lake Bled.<br><br>
+    • La isla del lago tiene una iglesia del siglo XVII.<br><br>
 
-    Clima templado (15°C–28°C), días largos y el lago en su máximo color turquesa.<br><br>
+    • Existe una tradición donde los novios suben 99 escalones juntos.<br><br>
 
-    En primavera y otoño hay menos turistas y la experiencia es más tranquila.
+    • El lago cambia de color dependiendo del clima y la luz.
     `;
   }
 
-  if(type === "ropa"){
+  if(type === "consejos"){
     info.innerHTML = `
     Lake Bled está en zona alpina, por lo que el clima cambia rápido.<br><br>
 
-    • Ropa por capas<br>
-    • Chaqueta impermeable o cortavientos<br>
-    • Suéter ligero<br>
-    • Zapatos cómodos o de senderismo<br><br>
+    • Ve temprano para evitar multitudes.<br><br>
 
-    Evita sandalias si vas a caminar alrededor del lago.
+    • Lleva chaqueta incluso en verano.<br><br>
+
+    • El atardecer desde el castillo es el mejor momento para fotos.
     `;
   }
 
-  if(type === "imperdibles"){
+  if(type === "presupuesto"){
     info.innerHTML = `
-    Imperdibles en Lake Bled:<br><br>
+    • Mochilero: 40–70 USD por día.<br><br>
 
-    • Isla de Bled con su iglesia<br>
-    • Castillo con vista panorámica<br>
-    • Caminata alrededor del lago (6 km)<br>
-    • Miradores al amanecer y atardecer<br><br>
+    • Viaje cómodo: 100–180 USD por día.<br><br>
 
-    El atardecer es el momento más espectacular.
+    • Viaje premium: 250+ USD por día.
     `;
   }
 
-  if(type === "precios"){
+  if(type === "restaurantes"){
     info.innerHTML = `
-    Precios aproximados:<br><br>
+    • Bled Castle Restaurant → comida tradicional con vista panorámica.<br><br>
 
-    • Alojamiento: 30–300 USD<br>
-    • Paseo en bote: 15–25 USD<br>
-    • Entrada al castillo: 10–15 USD<br>
-    • Comida: 10–40 USD<br><br>
+    • Public Bar & Vegan Kitchen → ambiente moderno y juvenil.<br><br>
 
-    En temporada alta los precios suben bastante.
+    • Vila Bled Restaurant → experiencia elegante junto al lago.
     `;
   }
 
 }
+  
