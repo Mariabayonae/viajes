@@ -1,17 +1,22 @@
-document.addEventListener("mousemove", (e) => {
-  const plane = document.querySelector(".plane");
-  if (!plane) return;
+document.addEventListener("DOMContentLoaded", () => {
 
-  plane.style.left = e.clientX + "px";
-  plane.style.top = e.clientY + "px";
+  const plane = document.querySelector(".plane");
+
+  document.addEventListener("mousemove", (e) => {
+    if (!plane) return;
+    plane.style.left = e.clientX + "px";
+    plane.style.top = e.clientY + "px";
+  });
+
 });
 
 function setInfo(type, btn){
 
-  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-  if(btn) btn.classList.add("active");
-
   const info = document.getElementById("info");
+  if (!info) return;
+
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  if (btn) btn.classList.add("active");
 
   if(type === "epoca"){
     info.innerHTML = `
