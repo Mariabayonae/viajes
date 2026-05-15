@@ -10,7 +10,7 @@
 
 <style>
 
-/* AVIÓN */
+
 .plane{
   position:fixed;
   top:0;
@@ -21,7 +21,7 @@
   z-index:9999;
 }
 
-/* BACK */
+
 .back{
   position:absolute;
   top:15px;
@@ -34,7 +34,7 @@
   z-index:10;
 }
 
-/* INTRO */
+
 .intro{
   max-width:800px;
   margin:25px auto 10px;
@@ -46,7 +46,7 @@
   line-height:1.6;
 }
 
-/* BOTONES */
+
 .tabs{
   display:flex;
   justify-content:center;
@@ -83,7 +83,7 @@
   line-height:1.6;
 }
 
-/* GALERÍA */
+
 .gallery{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -108,7 +108,7 @@
   border-radius:16px;
 }
 
-/* FONDO */
+
 .bg-shirakawa{
   position:fixed;
   inset:0;
@@ -130,19 +130,23 @@
 
 <a class="back" href="index.html">← Volver</a>
 
-<!-- FOTO GALERÍA ARRIBA -->
+<div class="title">
+  <h1>SHIRAKAWA-GO</h1>
+</div>
+
+
 <div class="gallery">
   <img src="fotos/shirakawa3.jpg">
   <img src="fotos/shirakawamedio.jpg">
   <img src="fotos/shirakawa2.jpg">
 </div>
 
-<!-- INTRO -->
+
 <div class="intro">
 Shirakawa-go es un pueblo tradicional japonés famoso por sus casas de techo de paja diseñadas para resistir fuertes nevadas.
 </div>
 
-<!-- BOTONES -->
+
 <div class="tabs">
 
   <button class="tab active" onclick="setInfo('epoca', this)">Mejor época</button>
@@ -152,12 +156,12 @@ Shirakawa-go es un pueblo tradicional japonés famoso por sus casas de techo de 
 
 </div>
 
-<!-- INFO -->
+
 <div class="card" id="info">
 Explora Shirakawa-go usando los botones.
 </div>
 
-<!-- VIDEO ABAJO -->
+
 <video class="video-bottom" autoplay muted loop playsinline>
   <source src="video/shirakawa.mp4">
 </video>

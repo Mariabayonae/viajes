@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gasadalur</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  overflow-x:hidden;
+
+  background:linear-gradient(180deg,#e7efe6,#ffffff);
+  color:#1f2a22;
+}
+
+/* fondo natural verde/café */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background:
+    radial-gradient(circle at top left, rgba(70,120,80,0.25), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(120,90,60,0.18), transparent 50%);
+
+  z-index:-2;
+}
+
+/* =========================
+   AVIÓN
+========================= */
+
+.plane{
+  position:fixed;
+  top:0;
+  left:0;
+  font-size:24px;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  z-index:9999;
+}
+
+/* =========================
+   BACK
+========================= */
+
+.back{
+  position:absolute;
+  top:15px;
+  left:15px;
+
+  padding:10px 14px;
+  border-radius:12px;
+
+  text-decoration:none;
+  color:white;
+
+  background:rgba(60,40,25,0.4);
+  backdrop-filter:blur(8px);
+  z-index:20;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  position:relative;
+}
+
+.hero video{
+  width:100%;
+  height:70vh;
+  object-fit:cover;
+  display:block;
+
+  filter:brightness(0.85) saturate(1.05);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(to top, rgba(0,0,0,0.45), transparent 55%);
+}
+
+.hero h1{
+  position:absolute;
+  bottom:25px;
+  left:25px;
+
+  font-family:'Anton', sans-serif;
+  font-size:4rem;
+
+  color:#e9f2ea;
+
+  letter-spacing:3px;
+
+  text-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+  max-width:850px;
+  margin:30px auto;
+  padding:22px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.45);
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(80,120,90,0.35);
+
+  line-height:1.7;
+  text-align:center;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   BOTONES (VERDE/CAFÉ GLASS)
+========================= */
+
+.tabs{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px;
+  margin:35px auto;
+}
+
+.tab{
+  padding:12px 22px;
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.15);
+
+  color:#2f4b3a;
+
+  border:1.5px solid rgba(90,130,100,0.6);
+
+  cursor:pointer;
+
+  font-weight:600;
+
+  backdrop-filter:blur(10px);
+
+  transition:0.3s;
+}
+
+.tab:hover{
+  transform:translateY(-2px);
+  background:rgba(120,160,130,0.15);
+}
+
+.tab.active{
+  background:rgba(80,120,90,0.25);
+  border-color:#4f7a5f;
+  color:#1f2a22;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+  max-width:850px;
+  margin:20px auto 40px;
+  padding:28px;
+
+  border-radius:20px;
+
+  background:rgba(255,255,255,0.45);
+  backdrop-filter:blur(14px);
+
+  border:1px solid rgba(80,120,90,0.3);
+
+  line-height:1.8;
+
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   GALERÍA
+========================= */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  max-width:1000px;
+  margin:20px auto 70px;
+}
+
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:18px;
+  transition:0.35s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+.gallery img:hover{
+  transform:scale(1.04);
+}
+
+/* responsive */
+@media(max-width:768px){
+  .hero h1{font-size:2.6rem;}
+  .gallery{grid-template-columns:1fr;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="plane">✈️</div>
+
+<a class="back" href="index.html">← Volver</a>
+
+<div class="hero">
+
+  <video autoplay muted loop playsinline>
+    <source src="video/gasadalur.mp4">
+  </video>
+
+  <h1>GASADALUR</h1>
+
+</div>
+
+<div class="intro">
+Gasadalur es un pequeño pueblo en las Islas Feroe rodeado de acantilados, niebla y cascadas que caen directo al océano Atlántico.
+</div>
+
+<div class="tabs">
+
+  <button class="tab active" onclick="setInfo('clima', this)">Clima</button>
+  <button class="tab" onclick="setInfo('como_llegar', this)">Cómo llegar</button>
+  <button class="tab" onclick="setInfo('experiencia', this)">Experiencia</button>
+
+</div>
+
+<div class="card" id="info">
+Explora Gasadalur usando los botones.
+</div>
+
+<div class="gallery">
+  <img src="fotos/gasadalur1.jpg">
+  <img src="fotos/gasadalur2.jpg">
+  <img src="fotos/gasadalur3.jpg">
+</div>
+
+<script src="scripts/gasadalur.js"></script>
+
+</body>
+</html>
