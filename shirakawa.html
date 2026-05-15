@@ -162,40 +162,7 @@ Explora Shirakawa-go usando los botones.
   <source src="video/shirakawa2.mp4">
 </video>
 
-<script>
-
-document.addEventListener("mousemove",(e)=>{
-  const plane=document.querySelector(".plane");
-  plane.style.left=e.clientX+"px";
-  plane.style.top=e.clientY+"px";
-});
-
-function setInfo(type, btn){
-
-  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-  if(btn) btn.classList.add("active");
-
-  const info=document.getElementById("info");
-
-  if(type==="epoca"){
-    info.innerHTML = `Invierno: nieve total y paisaje de cuento.<br>Verano: verde y tranquilo.`;
-  }
-
-  if(type==="ropa"){
-    info.innerHTML = `Invierno: abrigo, botas, guantes.<br>Verano: ropa ligera + chaqueta.`;
-  }
-
-  if(type==="imperdibles"){
-    info.innerHTML = `Mirador Shiroyama, casas gassho-zukuri, caminatas.`;
-  }
-
-  if(type==="precios"){
-    info.innerHTML = `Transporte 20–60 USD, alojamiento 80–200 USD.`;
-  }
-
-}
-
-</script>
+<script src="scripts/shirakawa.js"></script>
 
 </body>
 </html>

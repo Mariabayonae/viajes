@@ -1,3 +1,11 @@
+document.addEventListener("mousemove", (e) => {
+  const plane = document.querySelector(".plane");
+  if (!plane) return;
+
+  plane.style.left = e.clientX + "px";
+  plane.style.top = e.clientY + "px";
+});
+
 function setInfo(type, btn){
 
   document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
@@ -39,7 +47,7 @@ function setInfo(type, btn){
     info.innerHTML = `
     Transporte: 20–60 USD<br>
     Alojamiento: 80–250 USD<br>
-    omida: 10–30 USD<br>
+    Comida: 10–30 USD<br>
     Museos: 3–10 USD
     `;
   }

@@ -1,3 +1,13 @@
+document.addEventListener("mousemove", (e) => {
+  const plane = document.querySelector(".plane");
+  if (!plane) return;
+
+  plane.style.left = e.clientX + "px";
+  plane.style.top = e.clientY + "px";
+});
+
+
+
 function setInfo(type, btn){
 
   document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
@@ -9,9 +19,9 @@ function setInfo(type, btn){
     info.innerHTML = `
     Entre mayo y septiembre es la mejor época para visitar Lake Bled.<br><br>
 
-    Clima templado entre 15°C y 28°C, días largos y el lago en su color más turquesa.<br><br>
+    Clima templado (15°C–28°C), días largos y el lago en su máximo color turquesa.<br><br>
 
-    En primavera y otoño hay menos turistas, ideal si quieres una experiencia más tranquila.
+    En primavera y otoño hay menos turistas y la experiencia es más tranquila.
     `;
   }
 
@@ -21,10 +31,10 @@ function setInfo(type, btn){
 
     • Ropa por capas<br>
     • Chaqueta impermeable o cortavientos<br>
-    • Suéter ligero para la tarde-noche<br>
-    • Zapatos deportivos o de senderismo<br><br>
+    • Suéter ligero<br>
+    • Zapatos cómodos o de senderismo<br><br>
 
-    Evita sandalias si planeas caminar alrededor del lago.
+    Evita sandalias si vas a caminar alrededor del lago.
     `;
   }
 
@@ -33,11 +43,11 @@ function setInfo(type, btn){
     Imperdibles en Lake Bled:<br><br>
 
     • Isla de Bled con su iglesia<br>
-    • Castillo medieval con vista panorámica<br>
-    • Caminata completa alrededor del lago (aprox. 6 km)<br>
-    • Miradores al amanecer o atardecer<br><br>
+    • Castillo con vista panorámica<br>
+    • Caminata alrededor del lago (6 km)<br>
+    • Miradores al amanecer y atardecer<br><br>
 
-    El atardecer es el mejor momento para fotos.
+    El atardecer es el momento más espectacular.
     `;
   }
 
@@ -50,16 +60,7 @@ function setInfo(type, btn){
     • Entrada al castillo: 10–15 USD<br>
     • Comida: 10–40 USD<br><br>
 
-    En temporada alta (verano) los precios suben.
+    En temporada alta los precios suben bastante.
     `;
   }
 }
-
-/* ✈️ AVIÓN SIGUIENDO EL MOUSE */
-document.addEventListener("mousemove", (e) => {
-  const plane = document.querySelector(".plane");
-  if (!plane) return;
-
-  plane.style.left = e.clientX + "px";
-  plane.style.top = e.clientY + "px";
-});
