@@ -1,4 +1,4 @@
-Maria Bayona - Documentación Web final (copy past del repositorio) 
+Maria Bayona - Documentación Web final copy past del repositorio) 
 En esta documentación existen errores en la definición de titulos
 
  ruidajo  lun., 4 de may. de 2026 9:24
@@ -34,9 +34,9 @@ https://hydra.ojack.xyz/?code=JTJGJTJGJTIwbGljZW5zZWQlMjB3aXRoJTIwQ0MlMjBCWS1OQy
 https://hydra.ojack.xyz/?code=JTJGJTJGJTIwbGljZW5zZWQlMjB3aXRoJTIwQ0MlMjBCWS1OQy1TQSUyMDQuMCUyMGh0dHBzJTNBJTJGJTJGY3JlYXRpdmVjb21tb25zLm9yZyUyRmxpY2Vuc2VzJTJGYnktbmMtc2ElMkY0LjAlMkYlMEElMkYlMkYlMjBHYWxheHklMjBUcmlwJTBBJTJGJTJGJTIwYnklMjBSYW5nZ2ElMjBQdXJuYW1hJTIwQWppJTBBJTJGJTJGJTIwaHR0cHMlM0ElMkYlMkZyYW5nZ2FwdXJuYW1hYWppMS53aXhzaXRlLmNvbSUyRnBvcnRmb2xpbyUwQXNoYXBlKDElMkMlMjAxKSUwQSUwOS5tdWx0KHZvcm9ub2koMTAwMCUyQyUyMDIpJTBBJTA5JTA5LmJsZW5kKG8wKSUwQSUwOSUwOS5sdW1hKCkpJTBBJTA5LmFkZChzaGFwZSgzJTJDJTIwMC4xMjUpJTBBJTA5JTA5LnJvdGF0ZSgwLjY3MyUyQyUyMDEpJTBBJTA5JTA5Lm11bHQodm9yb25vaSgxNzg2Ljc1OSUyQyUyMDAuNzk3KSUwQSUwOSUwOSUwOS5sdW1hKCkpJTBBJTA5JTA5LnJvdGF0ZSgxLjUpKSUwQSUwOS5zY3JvbGxYKCU1QjAuMSUyQyUyMC0wLjA2MjUlMkMlMjAwLjAwNSUyQyUyMDAuMDAwMDElNUQlMkMlMjAwKSUwQSUwOS5zY3JvbGxZKCU1QjAuMSUyQyUyMC0wLjA2MjUlMkMlMjAwLjAwNSUyQyUyMDAuMDAwMDElNUQlMkMlMjAwLjk4MyklMEElMDkub3V0KCklM0I%3D
 ENLACE A MI REPOSITORIO https://mariabayonae.github.io/destinos-ocultos/ 
 
+........
 
-
-Documentación web final.md (descargado desde el hedgeDoc)
+Documentación web final.md descargado desde el hedgeDoc
 
 [Maria Bayona - Documentación Web final.md](https://github.com/user-attachments/files/27902811/Maria.Bayona.-.Documentacion.Web.final.md)
 # Maria Bayona - Documentación Web final
